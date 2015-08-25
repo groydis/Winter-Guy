@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 9b617d0daeb5a4e5ba2e6eee2973efc9
-timeCreated: 1440409729
+timeCreated: 1440498846
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -48,6 +48,9 @@ TextureImporter:
     21300082: WinterGuy_41
     21300084: WinterGuy_42
     21300086: WinterGuy_43
+    21300088: WinterGuy_44
+    21300090: WinterGuy_45
+    21300092: WinterGuy_46
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -528,6 +531,36 @@ TextureImporter:
         serializedVersion: 2
         x: 192
         y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WinterGuy_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WinterGuy_45
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WinterGuy_46
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
         width: 64
         height: 64
       alignment: 0

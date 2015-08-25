@@ -14,7 +14,7 @@ public class BoardManager : MonoBehaviour {
 	}
 	public int columns = 8;
 	public int rows = 8;
-	public Count wallCount = new Count(5, 9);
+	public Count wallCount = new Count(5, 6);
 	public Count foodCount = new Count(1, 5);
 	public GameObject exit;
 	public GameObject[] floorTiles;
@@ -54,7 +54,7 @@ public class BoardManager : MonoBehaviour {
 		int objectCount = Random.Range(min, max + 1);
 		for(int i = 0; i < objectCount; i++) {
 			Vector3 randomPosition = RandomPosition();
-			GameObject tileChoice = tileArray[Random.Range(0, tileArray.Length)];
+			GameObject tileChoice = tileArray[Random.Range (0, tileArray.Length)];
 			Instantiate(tileChoice, randomPosition, Quaternion.identity);
 		}
 	}
@@ -64,7 +64,7 @@ public class BoardManager : MonoBehaviour {
 		LayoutObjectAtRandom(wallTiles, wallCount.minimum, wallCount.maximum);
 		LayoutObjectAtRandom(foodTiles, foodCount.minimum, foodCount.maximum);
 		int enemyCount = (int)Mathf.Log(level, 2f);
-		LayoutObjectAtRandom(enemyTiles, enemyCount, enemyCount);
-		Instantiate(exit, new Vector3(columns - 1, rows - 1, 0f), Quaternion.identity);
+		//LayoutObjectAtRandom(enemyTiles, enemyCount, enemyCount);
+		Instantiate(exit, new Vector3(columns -1, rows -1, 0f), Quaternion.identity);
 	}
 }
