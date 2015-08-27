@@ -1,25 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Loader.cs">
-    <Files>
-      <File FileName="Assets/Scripts/GameManager.cs" Line="108" Column="2" />
-      <File FileName="Assets/Scripts/BoardManager.cs" Line="65" Column="2" />
-      <File FileName="Assets/Scripts/Enemy.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Loader.cs" Line="15" Column="1" />
-      <File FileName="Assets/Scripts/MovingObject.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Player.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/SoundManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Wall.cs" Line="1" Column="1" />
-=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
     <Files>
-      <File FileName="Assets/Scripts/BoardManager.cs" Line="40" Column="23" />
-      <File FileName="Assets/Scripts/MovingObject.cs" Line="68" Column="11" />
-      <File FileName="Assets/Scripts/Wall.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="37" Column="18" />
-      <File FileName="Assets/Scripts/Player.cs" Line="77" Column="2" />
->>>>>>> parent of 963ce89... Semi Operational State
+      <File FileName="Assets/Scripts/Player.cs" Line="102" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
