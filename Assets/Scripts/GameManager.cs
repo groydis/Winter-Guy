@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour {
 
 	private Text levelText;
 	private GameObject levelImage;
+	private GameObject restartButton;
 
 	private int level = 1;
 
@@ -24,6 +25,8 @@ public class GameManager : MonoBehaviour {
 
 	public int playerFoodPoints = 100;
 
+	public static bool restarting = false;
+	public static bool newGame = true;
 	private bool doingSteup;
 
 	[HideInInspector] public bool playersTurn = true;
@@ -40,19 +43,29 @@ public class GameManager : MonoBehaviour {
 		DontDestroyOnLoad (gameObject);
 		enemies = new List<Enemy>();
 		boardScript = GetComponent<BoardManager>();
-		InitGame (); 
+		if (restarting == false) {
+			InitGame ();
+		} 
 	}
-
+	
 	private void OnLevelWasLoaded(int index)
 	{
-		level++;
-		InitGame();
+		if (restarting == false) {
+			//If we are simply moving onto the next level within the game
+			level++;
+		} else {
+			//If we are restarting the game, we dont want to increment level
+			restarting = false;
+		}
+		InitGame ();
 	}
 	
 	void InitGame() {
 		doingSteup = true;
 		levelImage = GameObject.Find ("LevelImage");
 		levelText = GameObject.Find ("LevelText").GetComponent<Text> ();
+		restartButton = GameObject.Find ("RestartButton");
+		restartButton.SetActive (false);
 		levelText.fontSize = 32;
 		levelText.text = "Day " + level;
 		Invoke ("HideLevelImage", levelStartDelay);
@@ -75,6 +88,7 @@ public class GameManager : MonoBehaviour {
 	#endif
 		levelText.text = "After " + level + " days, you starved.";
 		levelImage.SetActive(true);
+		restartButton.SetActive (true);
 		// Disable the game manager??
 		enabled = false;
 	}

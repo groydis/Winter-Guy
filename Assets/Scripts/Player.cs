@@ -19,7 +19,7 @@ public class Player : MovingObject {
 	public AudioClip gameOverSound;
 
 	private Animator animator;
-	private int food;
+	public int food;
 
 	private Vector2 touchOrigin = -Vector2.one;
 

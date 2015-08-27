@@ -14,8 +14,11 @@ public class Loader : MonoBehaviour {
 		gameManagerToDestory = GameObject.FindGameObjectWithTag ("GameController");
 	}
 
-	public void Restart() {
+	public void Restart(int sceneToLoad) {
 		DestroyObject (gameManagerToDestory);
-		Application.LoadLevel ("Main");
+		Application.LoadLevel (sceneToLoad);
+		SoundManager.instance.musicSource.Play ();
+		GameManager.restarting = true;
+
 	}
 }
