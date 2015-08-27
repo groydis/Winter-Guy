@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 9b617d0daeb5a4e5ba2e6eee2973efc9
-timeCreated: 1440580226
+timeCreated: 1440498846
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -51,31 +51,6 @@ TextureImporter:
     21300088: WinterGuy_44
     21300090: WinterGuy_45
     21300092: WinterGuy_46
-    21300094: WinterGuy_47
-    21300096: WinterGuy_48
-    21300098: WinterGuy_49
-    21300100: WinterGuy_50
-    21300102: WinterGuy_51
-    21300104: WinterGuy_52
-    21300106: WinterGuy_53
-    21300108: WinterGuy_54
-    21300110: WinterGuy_55
-    21300112: WinterGuy_56
-    21300114: WinterGuy_57
-    21300116: WinterGuy_58
-    21300118: WinterGuy_59
-    21300120: WinterGuy_60
-    21300122: WinterGuy_61
-    21300124: WinterGuy_62
-    21300126: WinterGuy_63
-    21300128: WinterGuy_64
-    21300130: WinterGuy_65
-    21300132: WinterGuy_66
-    21300134: WinterGuy_67
-    21300136: WinterGuy_68
-    21300138: WinterGuy_69
-    21300140: WinterGuy_70
-    21300142: WinterGuy_71
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -98,7 +73,7 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -3
+  textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
     filterMode: 0
@@ -244,8 +219,8 @@ TextureImporter:
     - name: WinterGuy_12
       rect:
         serializedVersion: 2
-        x: 256
-        y: 512
+        x: 0
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -254,8 +229,8 @@ TextureImporter:
     - name: WinterGuy_13
       rect:
         serializedVersion: 2
-        x: 320
-        y: 512
+        x: 64
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -264,8 +239,8 @@ TextureImporter:
     - name: WinterGuy_14
       rect:
         serializedVersion: 2
-        x: 384
-        y: 512
+        x: 128
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -274,8 +249,8 @@ TextureImporter:
     - name: WinterGuy_15
       rect:
         serializedVersion: 2
-        x: 448
-        y: 512
+        x: 192
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -284,7 +259,7 @@ TextureImporter:
     - name: WinterGuy_16
       rect:
         serializedVersion: 2
-        x: 0
+        x: 256
         y: 448
         width: 64
         height: 64
@@ -294,7 +269,7 @@ TextureImporter:
     - name: WinterGuy_17
       rect:
         serializedVersion: 2
-        x: 64
+        x: 320
         y: 448
         width: 64
         height: 64
@@ -304,8 +279,8 @@ TextureImporter:
     - name: WinterGuy_18
       rect:
         serializedVersion: 2
-        x: 128
-        y: 448
+        x: 0
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -314,8 +289,8 @@ TextureImporter:
     - name: WinterGuy_19
       rect:
         serializedVersion: 2
-        x: 192
-        y: 448
+        x: 64
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -324,8 +299,8 @@ TextureImporter:
     - name: WinterGuy_20
       rect:
         serializedVersion: 2
-        x: 256
-        y: 448
+        x: 128
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -334,8 +309,8 @@ TextureImporter:
     - name: WinterGuy_21
       rect:
         serializedVersion: 2
-        x: 320
-        y: 448
+        x: 192
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -344,7 +319,7 @@ TextureImporter:
     - name: WinterGuy_22
       rect:
         serializedVersion: 2
-        x: 0
+        x: 256
         y: 384
         width: 64
         height: 64
@@ -354,7 +329,7 @@ TextureImporter:
     - name: WinterGuy_23
       rect:
         serializedVersion: 2
-        x: 64
+        x: 320
         y: 384
         width: 64
         height: 64
@@ -364,86 +339,6 @@ TextureImporter:
     - name: WinterGuy_24
       rect:
         serializedVersion: 2
-        x: 128
-        y: 384
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_25
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 384
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_26
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 384
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_27
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 384
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_28
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 384
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_29
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 384
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_30
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 384
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_31
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 384
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_32
-      rect:
-        serializedVersion: 2
         x: 0
         y: 320
         width: 64
@@ -451,7 +346,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_33
+    - name: WinterGuy_25
       rect:
         serializedVersion: 2
         x: 64
@@ -461,7 +356,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_34
+    - name: WinterGuy_26
       rect:
         serializedVersion: 2
         x: 128
@@ -471,11 +366,91 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_35
+    - name: WinterGuy_27
       rect:
         serializedVersion: 2
         x: 192
         y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WinterGuy_28
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WinterGuy_29
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WinterGuy_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WinterGuy_31
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WinterGuy_32
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WinterGuy_33
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WinterGuy_34
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WinterGuy_35
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -485,7 +460,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 320
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -494,7 +469,7 @@ TextureImporter:
     - name: WinterGuy_37
       rect:
         serializedVersion: 2
-        x: 0
+        x: 448
         y: 256
         width: 64
         height: 64
@@ -504,7 +479,7 @@ TextureImporter:
     - name: WinterGuy_38
       rect:
         serializedVersion: 2
-        x: 64
+        x: 512
         y: 256
         width: 64
         height: 64
@@ -514,7 +489,7 @@ TextureImporter:
     - name: WinterGuy_39
       rect:
         serializedVersion: 2
-        x: 128
+        x: 576
         y: 256
         width: 64
         height: 64
@@ -524,8 +499,8 @@ TextureImporter:
     - name: WinterGuy_40
       rect:
         serializedVersion: 2
-        x: 192
-        y: 256
+        x: 0
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -534,8 +509,8 @@ TextureImporter:
     - name: WinterGuy_41
       rect:
         serializedVersion: 2
-        x: 256
-        y: 256
+        x: 64
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -544,8 +519,8 @@ TextureImporter:
     - name: WinterGuy_42
       rect:
         serializedVersion: 2
-        x: 320
-        y: 256
+        x: 0
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -554,8 +529,8 @@ TextureImporter:
     - name: WinterGuy_43
       rect:
         serializedVersion: 2
-        x: 384
-        y: 256
+        x: 192
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -564,8 +539,8 @@ TextureImporter:
     - name: WinterGuy_44
       rect:
         serializedVersion: 2
-        x: 448
-        y: 256
+        x: 0
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -574,8 +549,8 @@ TextureImporter:
     - name: WinterGuy_45
       rect:
         serializedVersion: 2
-        x: 512
-        y: 256
+        x: 64
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -584,258 +559,8 @@ TextureImporter:
     - name: WinterGuy_46
       rect:
         serializedVersion: 2
-        x: 576
-        y: 256
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_47
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_48
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_49
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_50
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_51
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_52
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_53
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_54
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_55
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_56
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_57
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_58
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_59
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_60
-      rect:
-        serializedVersion: 2
         x: 128
         y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_61
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_62
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_63
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_64
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_65
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_66
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_67
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_68
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_69
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_70
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WinterGuy_71
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
         width: 64
         height: 64
       alignment: 0
