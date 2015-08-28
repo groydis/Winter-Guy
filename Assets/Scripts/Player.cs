@@ -17,17 +17,17 @@ public class Player : MovingObject {
 	public AudioClip drinkSound1;
 	public AudioClip drinkSound2;
 	public AudioClip gameOverSound;
-
+	
 	private Animator animator;
 	public int food;
+
 
 	private Vector2 touchOrigin = -Vector2.one;
 
 
-
 	// Use this for initialization
 	protected override void Start () {
-	
+
 		animator = GetComponent<Animator> ();
 		food = GameManager.instance.playerFoodPoints;
 

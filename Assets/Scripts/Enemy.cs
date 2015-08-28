@@ -13,10 +13,14 @@ public class Enemy : MovingObject {
 	public AudioClip enemyAttack1;
 	public AudioClip enemyAttack2;
 
+	private Camera mainCamera;
+	private CameraScript camScript;
 
 	
 	protected override void Start () 
 	{
+		mainCamera = Camera.main;
+		camScript = mainCamera.GetComponent<CameraScript>();
 		GameManager.instance.AddEnemyToList (this);
 		animator = GetComponent<Animator> ();
 		target = GameObject.FindGameObjectWithTag ("Player").transform;
@@ -52,6 +56,7 @@ public class Enemy : MovingObject {
 	{
 		Player hitPlayer = component as Player;
 		animator.SetTrigger ("enemyAttack");
+		camScript.ShakeCamera (0.1f, 0.2f);
 		SoundManager.instance.RandomizeSfx(enemyAttack1, enemyAttack2);
 		hitPlayer.LoseFood(playerDamage);
 	}
