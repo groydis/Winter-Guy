@@ -59,6 +59,7 @@ public class Enemy : MovingObject {
 		camScript.ShakeCamera (0.1f, 0.2f);
 		SoundManager.instance.RandomizeSfx(enemyAttack1, enemyAttack2);
 		hitPlayer.LoseFood(playerDamage);
+		hitPlayer.InitCBT ("-" + playerDamage.ToString());
 	}
 }
 
