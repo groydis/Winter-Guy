@@ -68,7 +68,7 @@ public class Enemy : MovingObject {
 			isCrit = true;
 		}
 		CombatTextManager.Instance.CreateText(transform.position, "-" + playerDamage, Color.red, isCrit);
-		//hitPlayer.InitCBT ("-" + playerDamage.ToString());
+		isCrit = false;
 	}
 }
 

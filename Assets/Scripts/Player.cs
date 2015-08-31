@@ -21,8 +21,7 @@ public class Player : MovingObject {
 	
 	private Animator animator;
 	public int food;
-
-	public GameObject playerCBT;
+	
 	public bool isCrit = false;
 
 
@@ -122,6 +121,7 @@ public class Player : MovingObject {
 				CombatTextManager.Instance.CreateText(transform.position, "+" + pointsPerFood, Color.green, isCrit);
 			SoundManager.instance.RandomizeSfx(eatSound1, eatSound2);
 			other.gameObject.SetActive (false);
+			isCrit = false;
 		} else if (other.tag == "Drink") {
 			//InitCBT("+" + pointsPerDrink.ToString());
 			food += pointsPerDrink;
@@ -133,6 +133,7 @@ public class Player : MovingObject {
 			CombatTextManager.Instance.CreateText(transform.position, "+" + pointsPerDrink, Color.green, isCrit);
 			SoundManager.instance.RandomizeSfx(drinkSound1, drinkSound2);
 			other.gameObject.SetActive (false);
+			isCrit = false;
 		}
 	}
 
@@ -164,22 +165,5 @@ public class Player : MovingObject {
 			SoundManager.instance.musicSource.Stop ();
 			GameManager.instance.GameOver ();
 		}
-	}
-
-	public void InitCBT(string text) 
-	{
-		GameObject temp = Instantiate (playerCBT) as GameObject;
-		RectTransform tempRect = temp.GetComponent<RectTransform> ();
-
-		temp.transform.SetParent(transform.FindChild("PlayerCanvas"));
-
-		tempRect.transform.localPosition = playerCBT.transform.localPosition;
-		tempRect.transform.localScale = playerCBT.transform.localScale;
-		tempRect.transform.localRotation = playerCBT.transform.localRotation;
-
-		temp.GetComponent<Animator> ().SetTrigger ("foodCollected");
-		temp.GetComponent<Text> ().text = text;
-
-		Destroy (temp.gameObject, 2);
 	}
 }
