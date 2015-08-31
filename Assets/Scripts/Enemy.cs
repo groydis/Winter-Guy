@@ -10,11 +10,15 @@ public class Enemy : MovingObject {
 	private Transform target;
 	private bool skipMove;
 
+	public float textFadeTime;
+
 	public AudioClip enemyAttack1;
 	public AudioClip enemyAttack2;
 
 	private Camera mainCamera;
 	private CameraScript camScript;
+
+	private bool isCrit = false;
 
 	
 	protected override void Start () 
@@ -59,7 +63,12 @@ public class Enemy : MovingObject {
 		camScript.ShakeCamera (0.1f, 0.2f);
 		SoundManager.instance.RandomizeSfx(enemyAttack1, enemyAttack2);
 		hitPlayer.LoseFood(playerDamage);
-		hitPlayer.InitCBT ("-" + playerDamage.ToString());
+		if (playerDamage > 10) 
+		{
+			isCrit = true;
+		}
+		CombatTextManager.Instance.CreateText(transform.position, "-" + playerDamage, Color.red, isCrit);
+		//hitPlayer.InitCBT ("-" + playerDamage.ToString());
 	}
 }
 

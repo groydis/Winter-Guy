@@ -9,6 +9,7 @@ public class Player : MovingObject {
 	public int pointsPerDrink = 20;
 	public Text foodText;
 	public float restartLevelDelay = 1f;
+	public float textFadeTime;
 
 	public AudioClip moveSound1;
 	public AudioClip moveSound2;
@@ -22,14 +23,15 @@ public class Player : MovingObject {
 	public int food;
 
 	public GameObject playerCBT;
+	public bool isCrit = false;
 
 
 	private Vector2 touchOrigin = -Vector2.one;
 
 
 	// Use this for initialization
-	protected override void Start () {
-
+	protected override void Start () 
+	{
 		animator = GetComponent<Animator> ();
 		food = GameManager.instance.playerFoodPoints;
 
@@ -110,15 +112,25 @@ public class Player : MovingObject {
 			Invoke ("Restart", restartLevelDelay);
 			enabled = false;
 		} else if (other.tag == "Food") {
-			InitCBT("+" + pointsPerFood.ToString());
+			//InitCBT("+" + pointsPerFood.ToString());
 			food += pointsPerFood;
-			foodText.text = "+" + pointsPerFood + " Food: " + food;
+			foodText.text = " Food: " + food;
+			if (pointsPerFood > 10 )
+			{
+				isCrit = true;
+			}
+				CombatTextManager.Instance.CreateText(transform.position, "+" + pointsPerFood, Color.green, isCrit);
 			SoundManager.instance.RandomizeSfx(eatSound1, eatSound2);
 			other.gameObject.SetActive (false);
 		} else if (other.tag == "Drink") {
-			InitCBT("+" + pointsPerDrink.ToString());
+			//InitCBT("+" + pointsPerDrink.ToString());
 			food += pointsPerDrink;
-			foodText.text = "+" + pointsPerDrink + " Food: " + food;
+			foodText.text = " Food: " + food;
+			if (pointsPerDrink > 10 )
+			{
+				isCrit = true;
+			}
+			CombatTextManager.Instance.CreateText(transform.position, "+" + pointsPerDrink, Color.green, isCrit);
 			SoundManager.instance.RandomizeSfx(drinkSound1, drinkSound2);
 			other.gameObject.SetActive (false);
 		}
@@ -140,7 +152,7 @@ public class Player : MovingObject {
 	{
 		animator.SetTrigger ("playerHit");
 		food -= loss;
-		foodText.text = "-" + loss + " Food: " + food;
+		foodText.text = " Food: " + food;
 		CheckIfGameOver ();
 	}
 
