@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour {
 	private Text levelText;
 	private GameObject levelImage;
 	private GameObject restartButton;
+	private Text highScoreText;
 
 	private int level = 1;
 
@@ -28,6 +29,19 @@ public class GameManager : MonoBehaviour {
 	public static bool restarting = false;
 	public static bool newGame = true;
 	private bool doingSteup;
+
+	public static int totalFood;
+	private string[] celebration = {
+		"Ridgie Didge",
+		"You Bloody Ripper",
+		"Fair Dinkum",
+		"Flat Out",
+		"Going Off",
+		"Bonzer Mate",
+		"Dinky Di",
+		"It's a Goer",
+		"True Blue"
+	};
 
 	[HideInInspector] public bool playersTurn = true;
 	
@@ -58,12 +72,15 @@ public class GameManager : MonoBehaviour {
 			restarting = false;
 		}
 		InitGame ();
+		StartCoroutine (CelebrationTextDisplay ());
 	}
 	
 	void InitGame() {
 		doingSteup = true;
 		levelImage = GameObject.Find ("LevelImage");
 		levelText = GameObject.Find ("LevelText").GetComponent<Text> ();
+		highScoreText = GameObject.Find("HighScoreText").GetComponent<Text>();
+		highScoreText.text = "";
 		restartButton = GameObject.Find ("RestartButton");
 		restartButton.SetActive (false);
 		levelText.fontSize = 32;
@@ -77,6 +94,7 @@ public class GameManager : MonoBehaviour {
 	{
 		levelImage.SetActive (false);
 		doingSteup = false;
+
 	}
 
 	public void GameOver() 
@@ -89,6 +107,14 @@ public class GameManager : MonoBehaviour {
 		levelText.text = "After " + level + " days, you starved.";
 		levelImage.SetActive(true);
 		restartButton.SetActive (true);
+		// Set High Score and Total Food Consumed
+		int highScore = PlayerPrefs.GetInt ("High Score");
+		int totalFoodConsumed = PlayerPrefs.GetInt ("Total Food Consumed");
+		if (level > highScore) {
+			highScoreText.text = "New High Score!";
+			PlayerPrefs.SetInt ("High Score", level);
+		}
+		PlayerPrefs.SetInt ("Total Food Consumed", totalFoodConsumed + totalFood + 100); 
 		// Disable the game manager??
 		enabled = false;
 	}
@@ -120,5 +146,11 @@ public class GameManager : MonoBehaviour {
 		}
 		playersTurn = true;
 		enemiesMoving = false;
+	}
+
+	IEnumerator CelebrationTextDisplay()
+	{
+		yield return new WaitForSeconds(levelStartDelay);
+		CombatTextManager.Instance.CreateCelebrationText (celebration[Random.Range (0, celebration.Length)], Color.white);
 	}
 }

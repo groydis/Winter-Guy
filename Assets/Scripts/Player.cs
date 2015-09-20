@@ -34,7 +34,7 @@ public class Player : MovingObject {
 		animator = GetComponent<Animator> ();
 		food = GameManager.instance.playerFoodPoints;
 
-		foodText.text = "Food: " + food;
+		foodText.text = food.ToString();
 
 		base.Start ();
 	}
@@ -91,7 +91,7 @@ public class Player : MovingObject {
 	protected override void AttemptMove<T> (int xDir, int yDir)
 	{
 		food--;
-		foodText.text = "Food: " + food;
+		foodText.text = food.ToString();
 		animator.SetTrigger ("playerMove");
 		base.AttemptMove<T>(xDir,yDir);
 
@@ -113,24 +113,26 @@ public class Player : MovingObject {
 		} else if (other.tag == "Food") {
 			//InitCBT("+" + pointsPerFood.ToString());
 			food += pointsPerFood;
-			foodText.text = " Food: " + food;
+			GameManager.totalFood += pointsPerFood;
+			foodText.text = food.ToString();
 			if (pointsPerFood > 10 )
 			{
 				isCrit = true;
 			}
-				CombatTextManager.Instance.CreateText(transform.position, "+" + pointsPerFood, Color.green, isCrit);
+			CombatTextManager.Instance.CreateCombatText(transform.position, "+" + pointsPerFood, Color.green, isCrit);
 			SoundManager.instance.RandomizeSfx(eatSound1, eatSound2);
 			other.gameObject.SetActive (false);
 			isCrit = false;
 		} else if (other.tag == "Drink") {
 			//InitCBT("+" + pointsPerDrink.ToString());
 			food += pointsPerDrink;
-			foodText.text = " Food: " + food;
+			GameManager.totalFood += pointsPerDrink;
+			foodText.text = food.ToString();
 			if (pointsPerDrink > 10 )
 			{
 				isCrit = true;
 			}
-			CombatTextManager.Instance.CreateText(transform.position, "+" + pointsPerDrink, Color.green, isCrit);
+			CombatTextManager.Instance.CreateCombatText(transform.position, "+" + pointsPerDrink, Color.green, isCrit);
 			SoundManager.instance.RandomizeSfx(drinkSound1, drinkSound2);
 			other.gameObject.SetActive (false);
 			isCrit = false;
@@ -153,7 +155,7 @@ public class Player : MovingObject {
 	{
 		animator.SetTrigger ("playerHit");
 		food -= loss;
-		foodText.text = " Food: " + food;
+		foodText.text = food.ToString();
 		CheckIfGameOver ();
 	}
 
