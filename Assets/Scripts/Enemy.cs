@@ -137,9 +137,9 @@ public class Enemy : MovingObject {
 
 	public void Talk(int magicNumber) {
 		if (magicNumber == 5) {
-			CombatTextManager.Instance.CreateCombatText (transform.position, adjectiveWord [Random.Range (0, adjectiveWord.Length)] + " " + adjectiveWord [Random.Range (0, adjectiveWord.Length)] + " " + nounWord [Random.Range (0, nounWord.Length)] + "!", Color.white, true);
+			CombatTextManager.Instance.CreateCombatTalk (transform.position, adjectiveWord [Random.Range (0, adjectiveWord.Length)] + " " + adjectiveWord [Random.Range (0, adjectiveWord.Length)] + " " + nounWord [Random.Range (0, nounWord.Length)] + "!", Color.white, false);
 		} else {
-			CombatTextManager.Instance.CreateCombatText(transform.position, "You" + " " + adjectiveWord[Random.Range(0, adjectiveWord.Length)] + " " + nounWord[Random.Range(0, nounWord.Length)] + "!", Color.white, true);
+			CombatTextManager.Instance.CreateCombatTalk (transform.position, "You" + " " + adjectiveWord[Random.Range(0, adjectiveWord.Length)] + " " + nounWord[Random.Range(0, nounWord.Length)] + "!", Color.white, false);
 		}
 	}
 

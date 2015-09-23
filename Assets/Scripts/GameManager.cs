@@ -32,15 +32,16 @@ public class GameManager : MonoBehaviour {
 
 	public static int totalFood;
 	private string[] celebration = {
-		"Ridgie Didge",
-		"You Bloody Ripper",
-		"Fair Dinkum",
-		"Flat Out",
-		"Going Off",
-		"Bonzer Mate",
-		"Dinky Di",
-		"It's a Goer",
-		"True Blue"
+		"Ridgie Didge!",
+		"You Bloody Ripper!",
+		"Fair Dinkum!",
+		"Flat Out!",
+		"Going Off!",
+		"Bonzer Mate!",
+		"Dinky Di!",
+		"It's a Goer!",
+		"True Blue!",
+		"You Beauty!"
 	};
 
 	[HideInInspector] public bool playersTurn = true;
@@ -104,7 +105,13 @@ public class GameManager : MonoBehaviour {
 	#else
 		levelText.fontSize = 10;
 	#endif
-		levelText.text = "After " + level + " days, you starved.";
+		string[] gameOverText = {
+			"After " + level + " days, you starved.",
+			"You survived " + level + " days, but then you gave up the will to live.",
+			"Death came for you on day " + level + ".",
+			level + " Days, now you are no more."
+		};
+		levelText.text = gameOverText[Random.Range(0, gameOverText.Length)];
 		levelImage.SetActive(true);
 		restartButton.SetActive (true);
 		// Set High Score and Total Food Consumed
@@ -151,6 +158,6 @@ public class GameManager : MonoBehaviour {
 	IEnumerator CelebrationTextDisplay()
 	{
 		yield return new WaitForSeconds(levelStartDelay);
-		CombatTextManager.Instance.CreateCelebrationText (celebration[Random.Range (0, celebration.Length)], Color.white);
+		CombatTextManager.Instance.CreateCelebrationText (celebration[Random.Range (0, celebration.Length)], Color.black);
 	}
 }

@@ -20,6 +20,7 @@ public class Player : MovingObject {
 	public AudioClip gameOverSound;
 	
 	private Animator animator;
+	private bool facingRight = true;
 	public int food;
 	
 	public bool isCrit = false;
@@ -36,6 +37,7 @@ public class Player : MovingObject {
 
 		foodText.text = food.ToString();
 
+
 		base.Start ();
 	}
 
@@ -47,8 +49,9 @@ public class Player : MovingObject {
 	// Update is called once per frame
 	void Update () 
 	{
-		if (!GameManager.instance.playersTurn)
+		if (!GameManager.instance.playersTurn) {
 			return;
+		}
 
 		int horizontal = 0;
 		int vertical = 0;
@@ -58,8 +61,10 @@ public class Player : MovingObject {
 		horizontal = (int)Input.GetAxisRaw ("Horizontal");
 		vertical = (int)Input.GetAxisRaw ("Vertical");
 
-		if (horizontal != 0)
+		if (horizontal != 0) {
 			vertical = 0;
+		} 
+
 	#else
 
 		if(Input.touchCount > 0)
@@ -84,14 +89,27 @@ public class Player : MovingObject {
 
 	#endif
 
-		if (horizontal != 0 || vertical != 0)
+		if (horizontal != 0 || vertical != 0) {
 			AttemptMove<Wall> (horizontal, vertical);
+		}
+
+		if (horizontal == 1) {
+			if (!facingRight) {
+				Flip();
+			}
+
+		} else if (horizontal == -1) {
+			if (facingRight) {
+				Flip();
+			}
+		}
 	}
 
 	protected override void AttemptMove<T> (int xDir, int yDir)
 	{
 		food--;
 		foodText.text = food.ToString();
+		// Currently not working, either animation broken or wrong place to start animation.
 		animator.SetTrigger ("playerMove");
 		base.AttemptMove<T>(xDir,yDir);
 
@@ -110,8 +128,9 @@ public class Player : MovingObject {
 		if (other.tag == "Exit") {
 			Invoke ("Restart", restartLevelDelay);
 			enabled = false;
-		} else if (other.tag == "Food") {
-			//InitCBT("+" + pointsPerFood.ToString());
+		} else if (other.tag == "Food") {;
+			pointsPerFood = other.transform.GetComponent<PickUp>().foodValue;
+			animator.SetTrigger("playerSearch");
 			food += pointsPerFood;
 			GameManager.totalFood += pointsPerFood;
 			foodText.text = food.ToString();
@@ -124,7 +143,8 @@ public class Player : MovingObject {
 			other.gameObject.SetActive (false);
 			isCrit = false;
 		} else if (other.tag == "Drink") {
-			//InitCBT("+" + pointsPerDrink.ToString());
+			animator.SetTrigger("playerSearch");
+			pointsPerDrink = other.transform.GetComponent<PickUp>().foodValue;
 			food += pointsPerDrink;
 			GameManager.totalFood += pointsPerDrink;
 			foodText.text = food.ToString();
@@ -167,5 +187,32 @@ public class Player : MovingObject {
 			SoundManager.instance.musicSource.Stop ();
 			GameManager.instance.GameOver ();
 		}
+	}
+	void Flip()
+	{
+		// Switch the way the player is labelled as facing
+		facingRight = !facingRight;
+		
+		// Multiply the player's x local scale by -1
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
+	}
+
+	private IEnumerator PickUpItem(float length, GameObject other) 
+	{
+		animator.SetTrigger("playerSearch");
+		yield return new WaitForSeconds(length);
+		food += pointsPerFood;
+		GameManager.totalFood += pointsPerFood;
+		foodText.text = food.ToString();
+		if (pointsPerFood > 10 )
+		{
+			isCrit = true;
+		}
+		CombatTextManager.Instance.CreateCombatText(transform.position, "+" + pointsPerFood, Color.green, isCrit);
+		SoundManager.instance.RandomizeSfx(eatSound1, eatSound2);
+		other.gameObject.SetActive (false);
+		isCrit = false;
 	}
 }

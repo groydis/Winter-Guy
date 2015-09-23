@@ -43,7 +43,17 @@ public class CombatTextManager : MonoBehaviour {
 		sct.transform.SetParent (canvasTransform);
 		sct.GetComponent<RectTransform> ().localPosition = new Vector3 (0, 0, 0);
 		sct.GetComponent<RectTransform> ().localScale = new Vector3 (1, 1, 1);
-		sct.GetComponent<CelebrationText> ().Initialize (speed, direction, fadeTime);
+		sct.GetComponent<CelebrationText> ().Initialize (speed, direction, fadeTime * 2);
+		sct.GetComponent<Text>().text = text;
+		sct.GetComponent<Text> ().color = color;
+	}
+
+	public void CreateCombatTalk(Vector3 position, string text, Color color, bool crit)
+	{
+		GameObject sct = (GameObject)Instantiate (combatTextPrefab, position, Quaternion.identity);
+		sct.transform.SetParent (canvasTransform);
+		sct.GetComponent<RectTransform> ().localScale = new Vector3 (1, 1, 1);
+		sct.GetComponent<CombatText> ().Initialize (speed, direction, fadeTime * 5, crit);
 		sct.GetComponent<Text>().text = text;
 		sct.GetComponent<Text> ().color = color;
 	}
