@@ -15,9 +15,12 @@ public class GameManager : MonoBehaviour {
 	public BoardManager boardScript;
 
 	private Text levelText;
-	private GameObject levelImage;
-	private GameObject restartButton;
 	private Text highScoreText;
+	private GameObject levelImage;
+	private GameObject buttons;
+	private GameObject gameUI;
+
+
 
 	private int level = 1;
 
@@ -74,17 +77,19 @@ public class GameManager : MonoBehaviour {
 		}
 		InitGame ();
 		StartCoroutine (CelebrationTextDisplay ());
+		gameUI.SetActive (true);
 	}
 	
 	void InitGame() {
 		doingSteup = true;
 		levelImage = GameObject.Find ("LevelImage");
 		levelText = GameObject.Find ("LevelText").GetComponent<Text> ();
-		highScoreText = GameObject.Find("HighScoreText").GetComponent<Text>();
+		highScoreText = GameObject.Find ("HighScoreText").GetComponent<Text> ();
 		highScoreText.text = "";
-		restartButton = GameObject.Find ("RestartButton");
-		restartButton.SetActive (false);
-		levelText.fontSize = 32;
+		buttons = GameObject.Find ("Buttons");
+		gameUI = GameObject.Find ("GameUI");
+		buttons.SetActive (false);
+		gameUI.SetActive (false);
 		levelText.text = "Day " + level;
 		Invoke ("HideLevelImage", levelStartDelay);
 		enemies.Clear ();
@@ -101,19 +106,17 @@ public class GameManager : MonoBehaviour {
 	public void GameOver() 
 	{	
 	#if UNITY_STANDALONE || UNITY_WEBPLAYER
-		levelText.fontSize = 32;
+		//levelText.fontSize = 32;
 	#else
-		levelText.fontSize = 10;
+		//levelText.fontSize = 10;
 	#endif
 		string[] gameOverText = {
-			"After " + level + " days, you starved.",
-			"You survived " + level + " days, but then you gave up the will to live.",
-			"Death came for you on day " + level + ".",
-			level + " Days, now you are no more."
+			"After " + level + " days, you starved."
 		};
 		levelText.text = gameOverText[Random.Range(0, gameOverText.Length)];
+		gameUI.SetActive (false);
 		levelImage.SetActive(true);
-		restartButton.SetActive (true);
+		buttons.SetActive (true);
 		// Set High Score and Total Food Consumed
 		int highScore = PlayerPrefs.GetInt ("High Score");
 		int totalFoodConsumed = PlayerPrefs.GetInt ("Total Food Consumed");

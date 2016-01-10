@@ -8,4 +8,7 @@ public class Menu : MonoBehaviour {
 		GameManager.restarting = true;
 	}
 
+	public void ShowHighScore() {
+		
+	}
 }

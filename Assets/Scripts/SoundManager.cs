@@ -11,6 +11,9 @@ public class SoundManager : MonoBehaviour {
 	public float lowPitchRange = .95f;
 	public float highPitchRange = 1.05f;
 
+	public float setMusicVolume;
+	public float setSFXVolume;
+
 	// Use this for initialization
 	void Awake () 
 	{
@@ -19,6 +22,18 @@ public class SoundManager : MonoBehaviour {
 		else if (instance != null)
 			Destroy (gameObject);
 		DontDestroyOnLoad (gameObject);
+		PlayerPrefs.GetFloat ("Music-Volume", setMusicVolume);
+		if (!PlayerPrefs.HasKey("Music-Volume")) {
+			setMusicVolume = 1;
+			PlayerPrefs.SetFloat("Music-Volume", setMusicVolume);
+		}
+		PlayerPrefs.GetFloat ("SFX-Volume", setSFXVolume);
+		if (!PlayerPrefs.HasKey("SFX-Volume")) {
+			setSFXVolume = 1;
+			PlayerPrefs.SetFloat("SFX-Volume", setSFXVolume);
+		}
+		efxSource.volume = setSFXVolume;
+		musicSource.volume = setMusicVolume;
 	}
 
 	public void PlaySingle(AudioClip clip)

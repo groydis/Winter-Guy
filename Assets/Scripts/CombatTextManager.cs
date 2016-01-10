@@ -54,7 +54,8 @@ public class CombatTextManager : MonoBehaviour {
 		sct.transform.SetParent (canvasTransform);
 		sct.GetComponent<RectTransform> ().localScale = new Vector3 (1, 1, 1);
 		sct.GetComponent<CombatText> ().Initialize (speed, direction, fadeTime * 5, crit);
-		sct.GetComponent<Text>().text = text;
+		sct.GetComponent<Text> ().fontSize = 50;
+		sct.GetComponent<Text> ().text = text;
 		sct.GetComponent<Text> ().color = color;
 	}
 	
