@@ -20,6 +20,7 @@ public class Player : MovingObject {
 	public AudioClip gameOverSound;
 	
 	private Animator animator;
+	public AnimationClip movementAnim;
 	private bool facingRight = true;
 	public int food;
 	
@@ -162,8 +163,8 @@ public class Player : MovingObject {
 	protected override void OnCantMove <T> (T component)
 	{
 		Wall hitWall = component as Wall;
-		hitWall.DamageWall (wallDamage);
 		animator.SetTrigger ("playerChop");
+		hitWall.DamageWall (wallDamage);
 	}
 
 	private void Restart() 

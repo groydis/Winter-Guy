@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
 	public float levelStartDelay = 2f;
-	public float turnDelay = .1f;
+	public float turnDelay = .5f;
 
 	public static GameManager instance = null;
 
@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
 	public BoardManager boardScript;
 
 	private Text levelText;
+	private Text deathText;
 	private Text highScoreText;
 	private GameObject levelImage;
 	private GameObject buttons;
@@ -90,6 +91,7 @@ public class GameManager : MonoBehaviour {
 		gameUI = GameObject.Find ("GameUI");
 		buttons.SetActive (false);
 		gameUI.SetActive (false);
+		levelText.fontSize = 100;
 		levelText.text = "Day " + level;
 		Invoke ("HideLevelImage", levelStartDelay);
 		enemies.Clear ();
@@ -110,6 +112,7 @@ public class GameManager : MonoBehaviour {
 	#else
 		//levelText.fontSize = 10;
 	#endif
+		levelText.fontSize = 50;
 		string[] gameOverText = {
 			"After " + level + " days, you starved."
 		};
@@ -161,6 +164,6 @@ public class GameManager : MonoBehaviour {
 	IEnumerator CelebrationTextDisplay()
 	{
 		yield return new WaitForSeconds(levelStartDelay);
-		CombatTextManager.Instance.CreateCelebrationText (celebration[Random.Range (0, celebration.Length)], Color.black);
+		CombatTextManager.Instance.CreateCelebrationText (celebration[Random.Range (0, celebration.Length)], Color.white);
 	}
 }
